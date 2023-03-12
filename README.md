@@ -1,14 +1,9 @@
 # Friday Night Films
 
-This is the starting repository for the React Development course Films Project.
+This is the starting repository for Films Project.
 
-You will notice that the CSS has been broken up into separate CSS files for separate components:
 
- - `FilmLibrary.css`
- - `FilmDetail.css`
- - `FilmRow.css`
-
-You will also find a file called `TMDB.js` which contains a sample of movie data that mimics what's found in the actual TMDB API (we can swap it out for the real API data later).
+You will find a file called `TMDB.js` which contains a sample of movie data that mimics what's found in the actual TMDB API (we can swap it out for the real API data later).
 
 ## Material Icons
 
@@ -44,6 +39,44 @@ You can construct the full URL using a prefix, with the following base URLs:
 const posterURL = `https://image.tmdb.org/t/p/w780${poster_path}`
 const backdropURL = `https://image.tmdb.org/t/p/w1280${backdrop_path}`
 ```
+
+Step 1: Make the list of movies work
+
+In FilmLibrary.js you'll find that there's a list of films there with three mock films in the list. Those should be real films!
+
+Move the FilmRow elements into a separate component, and then use the data in TMBD.js to populate a whole list of FilmRow's. Move the CSS import for FilmRow.css to the matching JavaScript file.
+
+Make it so that:
+
+    Each film has the correct title, poster and year (calculate the year from the date!)
+    The number next to ALL at the top matches the number of films the list.
+    All the films start off with the icon for add_to_queue (they are not in the favourite list yet)
+
+Hint: The README.md file in the given code has information on how the icons and URLs for posters work
+
+Hint: You'll need to use Date.getFullYear() to get the year.
+Step 2: Show film detail
+
+Make it so that when you click on a film, it shows the details for that film in the right-hand panel (FilmDetail is already a separate component for you)
+
+Hint: You'll need to store the film information as state in the FilmLibrary component:
+
+const [selectedFilm, setSelectedFilm] = useState(null)
+
+Extension: Film Favourites list
+
+Find the fave button on each FilmRow (it's the add_to_queue icon). Use that button to add a film to a list of favourite films.
+
+When you click FAVES at the top, it should switch to showing a list of all your favourite films.
+
+Make it so that:
+
+    You can easily swap between showing ALL (all films) and FAVES (only favourites)
+    The ALL and FAVES buttons visibly change to indicate which one is currently selected
+    The icon changes from a add_to_queue icon to a remove_from_queue icon if the film is one of the favourites
+    When you click the remove_from_queue icon button, it should remove that film from the favourites list
+    The number next to FAVES is the number of films in the favourites list
+
 
 ## Available Scripts
 
