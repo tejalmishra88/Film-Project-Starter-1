@@ -1,14 +1,9 @@
 # Friday Night Films
 
-This is the starting repository for the React Development course Films Project.
+This is the starting repository for Films Project.
 
-You will notice that the CSS has been broken up into separate CSS files for separate components:
 
- - `FilmLibrary.css`
- - `FilmDetail.css`
- - `FilmRow.css`
-
-You will also find a file called `TMDB.js` which contains a sample of movie data that mimics what's found in the actual TMDB API (we can swap it out for the real API data later).
+You will find a file called `TMDB.js` which contains a sample of movie data that mimics what's found in the actual TMDB API (we can swap it out for the real API data later).
 
 ## Material Icons
 
